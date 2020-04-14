@@ -1,0 +1,7 @@
+{
+  "name": "AppWarframe",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
