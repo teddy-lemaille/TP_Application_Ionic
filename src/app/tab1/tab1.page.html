@@ -1,17 +1,33 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Warframe looter
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+
+<ion-content [fullscreen]="true">
+
+  <ion-toolbar>
+    <ion-searchbar type="text" placeholder="Items" (keyup.enter)="onSearchItems($event)"></ion-searchbar>
+  </ion-toolbar>
+
+
+
+
+  <ion-list>
+    <ion-item *ngFor="let drop of list">
+      <ion-label>
+        <ion-text color="primary"><h3> {{drop.place}}</h3></ion-text>
+        <p>{{drop.item}} {{drop.chance}}%</p>
+        <div *ngIf="show">
+        </div>
+      </ion-label>
+      <ion-button item-right (click)="onSearchItemsString(drop.place)">Plus</ion-button>
+    </ion-item>
+  </ion-list>
+
+
 </ion-content>

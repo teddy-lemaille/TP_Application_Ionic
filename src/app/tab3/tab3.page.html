@@ -1,17 +1,38 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      Riven
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-toolbar>
+    <ion-searchbar type="text" placeholder="Arme" (keyup.enter)="onSearchRiven($event)"></ion-searchbar>
+  </ion-toolbar>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+<!--
+  <ion-list>
+    <ion-item *ngFor="let arme of listresult">
+      <ion-label>
+        <ion-text color="primary"><h3> {{arme.rerolled.compatibility}}</h3></ion-text>
+        <p></p>
+      </ion-label>
+      <ion-label>
+        <ion-text color="primary"><h3> {{arme.unrolled.compatibility}}</h3></ion-text>
+        <p></p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+-->
+
+  <ion-list>
+    <ion-item *ngFor="let list of listresult">
+      <ion-label>
+        <ion-text color="primary"><h3> {{list.unrolled.avg}}</h3></ion-text>
+        <p></p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
 </ion-content>

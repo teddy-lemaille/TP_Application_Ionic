@@ -1,17 +1,36 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Fissure
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+ 
+  <ion-item>
+    <ion-button item-left (click)="ngOnInit()">
+      <ion-icon name="reload"></ion-icon>
+    </ion-button>
+    <ion-label>Plateforme</ion-label>
+    <ion-select name="SelectPlateform" placeholder="Select plateforme" value="pc" (ionChange)="onChange($event)">
+      <ion-select-option value="pc">PC</ion-select-option>
+      <ion-select-option value="ps4">PS4</ion-select-option>
+      <ion-select-option value="xb1">Xbox One</ion-select-option>
+      <ion-select-option value="swi">Switch</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-list>
+    <ion-item *ngFor="let fissure of list">
+      <ion-label>
+        <ion-text color="primary"><h3>{{fissure.tier}} : {{fissure.node}}</h3></ion-text>
+        <p></p>
+        <p>{{fissure.missionType}} {{fissure.eta}}</p>
+      </ion-label>
+    </ion-item>
+
+  </ion-list>
+
 </ion-content>
