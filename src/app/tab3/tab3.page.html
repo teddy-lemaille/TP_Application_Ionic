@@ -12,27 +12,61 @@
   </ion-toolbar>
 
 <!--
+
   <ion-list>
-    <ion-item *ngFor="let arme of listresult">
+    <ion-item *ngFor="let list of listresult">
       <ion-label>
-        <ion-text color="primary"><h3> {{arme.rerolled.compatibility}}</h3></ion-text>
-        <p></p>
-      </ion-label>
-      <ion-label>
-        <ion-text color="primary"><h3> {{arme.unrolled.compatibility}}</h3></ion-text>
+        <ion-text color="primary"><h3> {{}}</h3></ion-text>
         <p></p>
       </ion-label>
     </ion-item>
   </ion-list>
 -->
 
+<label>Stat 1 </label><br />
+<select [(ngModel)]="AttributeName1">
+    <option *ngFor="let Attribute of ListAttributeName" [value]="Attribute">
+      {{Attribute}}
+    </option>
+</select><br />
+
+<label>Stat 2 </label><br />
+<select [(ngModel)]="AttributeName2">
+    <option *ngFor="let Attribute of ListAttributeName" [value]="Attribute">
+      {{Attribute}}
+    </option>
+</select><br />
+
+<label>Stat 3 </label><br />
+<select [(ngModel)]="AttributeName3">
+    <option *ngFor="let Attribute of ListAttributeName" [value]="Attribute">
+      {{Attribute}}
+    </option>
+</select><br />
+
+<label>Stat negative </label><br />
+<select [(ngModel)]="AttributeNegativeName">
+    <option *ngFor="let Attribute of ListAttributeName" [value]="Attribute">
+      {{Attribute}}
+    </option>
+</select><br />
+
+
+
   <ion-list>
-    <ion-item *ngFor="let list of listresult">
+    <ion-item *ngFor="let riven of ListAll">
       <ion-label>
-        <ion-text color="primary"><h3> {{list.unrolled.avg}}</h3></ion-text>
+        <ion-text color="primary">
+          <h3>
+            <div *ngIf="riven.top_bid!=null">{{riven.top_bid}}</div>
+            <div *ngIf="riven.top_bid==null && riven.starting_price!=null">{{riven.starting_price}}</div>
+            <div *ngIf="riven.top_bid==null && riven.starting_price==null">{{riven.buyout_price}}</div>
+          </h3>
+        </ion-text>
         <p></p>
       </ion-label>
     </ion-item>
   </ion-list>
+
 
 </ion-content>

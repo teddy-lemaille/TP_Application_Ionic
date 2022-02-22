@@ -1,0 +1,283 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Liste des Mods ({{NbMaxMod}}) <ion-checkbox [(ngModel)]="ListModGroupAllCheckboxisChecked" id="ListModGroupAllCheckbox" (click)="GroupAll()" ></ion-checkbox> </ion-title>    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid>
+
+    <ion-row> <!-- Warframe -->
+      <ion-col>
+        <div>
+          <label>Warframe + Aura ({{ListModWarframe.length + ListModAura.length}}) </label>
+          <ion-checkbox [(ngModel)]="ListModGroupWarframeCheckboxisChecked" id="ListModGroupWarframeCheckbox" (click)="GroupWarframe()" ></ion-checkbox>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>  
+          <label>Warframe ({{ListModWarframe.length}}) </label>
+          <ion-checkbox [(ngModel)]="ListModWarframeCheckboxisChecked" id="ListModWarframeCheckbox" ></ion-checkbox>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <label>Aura ({{ListModAura.length}}) </label>
+          <ion-checkbox [(ngModel)]="ListModAuraCheckboxisChecked" id="ListModAuraCheckbox" ></ion-checkbox>
+        </div>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row> <!-- Weapon -->
+      <ion-col>
+        <div>
+          <label>Weapon ({{ListModWeaponPrimary.length + ListModWeaponRifle.length + ListModWeaponAssault_Rifle.length + ListModWeaponShotgun.length + 
+            ListModWeaponSniper.length + ListModWeaponBow.length + ListModWeaponPistol.length + ListModWeaponMelee.length + ListModWeaponStance.length}}) </label>
+          <ion-checkbox [(ngModel)]="ListModGroupWeaponCheckboxisChecked" id="ListModGroupWeaponCheckbox" (click)="GroupWeapon()" ></ion-checkbox>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <label>Primary ({{ListModWeaponPrimary.length}}) </label>
+          <ion-checkbox [(ngModel)]="ListModWeaponPrimaryCheckboxisChecked" id="ListModWeaponPrimaryCheckbox" ></ion-checkbox>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <label>Rifle ({{ListModWeaponRifle.length}}) </label>
+          <ion-checkbox [(ngModel)]="ListModWeaponRifleCheckboxisChecked" id="ListModWeaponRifleCheckbox" ></ion-checkbox>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <label>Assault Rifle ({{ListModWeaponAssault_Rifle.length}}) </label>
+          <ion-checkbox [(ngModel)]="ListModWeaponAssault_RifleCheckboxisChecked" id="ListModWeaponAssault_RifleCheckbox" ></ion-checkbox>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <label>Shotgun ({{ListModWeaponShotgun.length}}) </label>
+          <ion-checkbox [(ngModel)]="ListModWeaponShotgunCheckboxisChecked" id="ListModWeaponShotgunCheckbox" ></ion-checkbox>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <label>Sniper ({{ListModWeaponSniper.length}}) </label>
+          <ion-checkbox [(ngModel)]="ListModWeaponSniperCheckboxisChecked" id="ListModWeaponSniperCheckbox" ></ion-checkbox>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <label>Bow ({{ListModWeaponBow.length}}) </label>
+          <ion-checkbox [(ngModel)]="ListModWeaponBowCheckboxisChecked" id="ListModWeaponBowCheckbox" ></ion-checkbox>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <label>Pistol ({{ListModWeaponPistol.length}}) </label>
+          <ion-checkbox [(ngModel)]="ListModWeaponPistolCheckboxisChecked" id="ListModWeaponPistolCheckbox" ></ion-checkbox>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <label>Melee ({{ListModWeaponMelee.length}}) </label>
+          <ion-checkbox [(ngModel)]="ListModWeaponMeleeCheckboxisChecked" id="ListModWeaponMeleeCheckbox" ></ion-checkbox>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <label>Stance ({{ListModWeaponStance.length}}) </label>
+          <ion-checkbox [(ngModel)]="ListModWeaponStanceCheckboxisChecked" id="ListModWeaponStanceCheckbox" ></ion-checkbox>
+        </div>
+      </ion-col>
+      
+    </ion-row>
+
+    <ion-row> <!-- Companion -->
+      <ion-col>
+        <div>
+          <label>Companions ({{ListModCompanion.length + ListModCompanionRobotic.length + ListModCompanionSentinel.length + ListModCompanionMOA.length 
+            + ListModCompanionBeast.length + ListModCompanionKubrow.length + ListModCompanionKavat.length + ListModCompanionHound.length}})</label>
+          <ion-checkbox [(ngModel)]="ListModGroupCompanionCheckboxisChecked" id="ListModGroupCompanionCheckbox" (click)="GroupCompanion()" ></ion-checkbox><br>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <label>Companion ({{ListModCompanion.length}}) </label>
+          <ion-checkbox [(ngModel)]="ListModCompanionCheckboxisChecked" id="ListModCompanionCheckbox" ></ion-checkbox><br>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <label>Robotic ({{ListModCompanionRobotic.length}}) </label>
+          <ion-checkbox [(ngModel)]="ListModCompanionRoboticCheckboxisChecked" id="ListModCompanionRoboticCheckbox" ></ion-checkbox><br>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <label>Sentinel ({{ListModCompanionSentinel.length}}) </label>
+          <ion-checkbox [(ngModel)]="ListModCompanionSentinelCheckboxisChecked" id="ListModCompanionSentinelCheckbox" ></ion-checkbox><br>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <label>MOA ({{ListModCompanionMOA.length}}) </label>
+          <ion-checkbox [(ngModel)]="ListModCompanionMOACheckboxisChecked" id="ListModCompanionMOACheckbox" ></ion-checkbox><br>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <label>Beast ({{ListModCompanionBeast.length}}) </label>
+          <ion-checkbox [(ngModel)]="ListModCompanionBeastCheckboxisChecked" id="ListModCompanionBeastCheckbox" ></ion-checkbox><br>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <label>Kubrow ({{ListModCompanionKubrow.length}}) </label>
+          <ion-checkbox [(ngModel)]="ListModCompanionKubrowCheckboxisChecked" id="ListModCompanionKubrowCheckbox" ></ion-checkbox><br>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <label>Kavat ({{ListModCompanionKavat.length}}) </label>
+          <ion-checkbox [(ngModel)]="ListModCompanionKavatCheckboxisChecked" id="ListModCompanionKavatCheckbox" ></ion-checkbox><br>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <label>Hound ({{ListModCompanionHound.length}}) </label>
+          <ion-checkbox [(ngModel)]="ListModCompanionHoundCheckboxisChecked" id="ListModCompanionHoundCheckbox" ></ion-checkbox><br>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row> <!-- Archwings -->
+      <ion-col>
+        <div>
+          <label>Archwings ({{ListModArchwing.length + ListModArchwing_Gun.length + ListModArchwing_Melee.length}}) </label>
+          <ion-checkbox [(ngModel)]="ListModGroupArchwingCheckboxisChecked" id="ListModGroupArchwingCheckbox" (click)="GroupArchwing()" ></ion-checkbox>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <label>Archwing ({{ListModArchwing.length}}) </label>
+          <ion-checkbox [(ngModel)]="ListModArchwingCheckboxisChecked" id="ListModArchwingCheckbox" ></ion-checkbox>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <label>Archwing Gun ({{ListModArchwing_Gun.length}}) </label>
+          <ion-checkbox [(ngModel)]="ListModArchwing_GunCheckboxisChecked" id="ListModArchwing_GunCheckbox" ></ion-checkbox>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <label>Archwing Melee ({{ListModArchwing_Melee.length}}) </label>
+          <ion-checkbox [(ngModel)]="ListModArchwing_MeleeCheckboxisChecked" id="ListModArchwing_MeleeCheckbox" ></ion-checkbox>
+        </div>
+      </ion-col>
+    </ion-row>
+  
+
+    <ion-row> <!-- K-drives -->
+      <ion-col>
+        <div>
+          <label>K-drives ({{ListModK_Drives.length}}) </label>
+          <ion-checkbox [(ngModel)]="ListModK_DrivesCheckboxisChecked"id="ListModK_DrivesCheckbox" ></ion-checkbox>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row> <!-- Augment -->
+      <ion-col>
+        <div>
+          <label>Augments ({{ListModAugmentWarframe.length + ListModAugmentWeapon.length + ListModAugmentWarframePvp.length}}) </label>
+          <ion-checkbox [(ngModel)]="ListModGroupAugmentCheckboxisChecked" id="ListModGroupAugmentCheckbox" (click)="GroupAugment()" ></ion-checkbox>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <label>Augment Warframe ({{ListModAugmentWarframe.length}}) </label>
+          <ion-checkbox [(ngModel)]="ListModAugmentWarframeCheckboxisChecked"id="ListModAugmentWarframeCheckbox" ></ion-checkbox>
+        </div>
+      </ion-col>      
+      <ion-col>
+        <div>
+          <label>Augment Warframe PvP ({{ListModAugmentWarframePvp.length}}) </label>
+          <ion-checkbox [(ngModel)]="ListModAugmentWarframePvpCheckboxisChecked"id="ListModAugmentWarframePvpCheckbox" ></ion-checkbox>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <label>Augment Weapon ({{ListModAugmentWeapon.length}}) </label>
+          <ion-checkbox [(ngModel)]="ListModAugmentWeaponCheckboxisChecked"id="ListModAugmentWeaponCheckbox" ></ion-checkbox>
+        </div>
+      </ion-col>
+    </ion-row>
+
+
+
+
+
+
+    <ion-row>
+      <ion-col>
+        <div>
+          <label>Conclaves ({{ListModConclaveWarframe.length + ListModConclaveWeapon.length}}) </label>
+          <ion-checkbox [(ngModel)]="ListModGroupConclaveCheckboxisChecked" id="ListModGroupConclaveCheckbox" (click)="GroupConclave()" ></ion-checkbox>
+        </div>
+      </ion-col>
+      <ion-col>
+        <label>Conclave Warframe ({{ListModConclaveWarframe.length}})</label>
+        <ion-checkbox [(ngModel)]="ListModConclaveWarframeCheckboxisChecked" id="ListModConclaveWarframeCheckbox"></ion-checkbox>
+      </ion-col>
+      <ion-col>
+        <label>Conclave Weapon ({{ListModConclaveWeapon.length}})</label>
+        <ion-checkbox [(ngModel)]="ListModConclaveWeaponCheckboxisChecked"id="ListModConclaveWeaponCheckbox" ></ion-checkbox>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+  <label>Mod Primed ({{ListModPrimed.length}})</label>
+  <ion-checkbox [(ngModel)]="ListModPrimedCheckboxisChecked"id="ListModPrimedCheckbox" ></ion-checkbox><br>
+  
+  <label>Mod Nightmare ({{ListModNightmare.length}})</label>
+  <ion-checkbox [(ngModel)]="ListModNightmareCheckboxisChecked"id="ListModNightmareCheckbox" ></ion-checkbox><br>
+
+  <label>Mod Corrupted ({{ListModCorrupted.length}})</label>
+  <ion-checkbox [(ngModel)]="ListModCorruptedCheckboxisChecked"id="ListModCorruptedCheckbox" ></ion-checkbox><br>
+
+  <label>Mod Drift ({{ListModDrift.length}})</label>
+  <ion-checkbox [(ngModel)]="ListModDriftCheckboxisChecked"id="ListModDriftCheckbox" ></ion-checkbox><br>
+
+  <label>Mod Bosses ({{ListModBosses.length}})</label>
+  <ion-checkbox [(ngModel)]="ListModBossesCheckboxisChecked"id="ListModBossesCheckbox" ></ion-checkbox><br>
+
+  <label>Nbr de vendeur min : </label>
+  <ion-input [(ngModel)]="NbrDeVendeur" value="{{NbrDeVendeur}}"></ion-input>
+
+  <label>Valeur min : </label>
+  <ion-input [(ngModel)]="ValeurMin" value="{{ValeurMin}}"></ion-input>
+
+  <ion-button (click)="RechercheStatic()">Lancer la recherche</ion-button>
+  <ion-button (click)="Reprendre()">Reprendre la recherche</ion-button>
+  <ion-progress-bar style="width: 300px; margin-left: 20px; height: 25px;" color="secondary" value="{{i/List.length}}" max="1000"></ion-progress-bar>
+
+  <label> {{i*100/List.length}}% {{List.length}}</label>
+
+
+  <ion-list>
+    <ion-item *ngFor="let mod of ListModPrice">
+      <ion-label>
+        <ion-text color="primary"><h3> {{mod.name}} {{mod.platinum}}  {{mod.vendeur}} <a href="https://warframe.market/items/{{mod.name}}" target="_blank"> Market</a></h3></ion-text>
+        <div *ngIf="show">
+        </div>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+
+</ion-content>

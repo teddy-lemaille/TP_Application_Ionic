@@ -5,7 +5,8 @@ import { AppModule } from './app.module';
 import { HttpClient } from '@angular/common/http';
 import { Drops } from './Drops';
 import { Fissure } from './Fissure';
-import { Arme, Result } from './Riven';
+import { Mod } from './Class/Mod';
+import { Weapon } from './Class/Weapon';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,7 @@ export class API
     getDrops(items: string) : Promise<Drops[]>
     {
       const url: string = 'https://api.warframestat.us/drops/search/' + encodeURI(items);
+      console.log(url);
       return new Promise(resolve => {
         this.http.get(url).subscribe(data => { let json: Drops[] = data as Drops[]; resolve(json);},
                                      err => { console.log(err); });
@@ -33,26 +35,25 @@ export class API
                                      err => { console.log(err); });
       });
     }
-
-    getRiven(nomArme : string) : Promise<Arme[]>
-    {
-      const url: string = "https://api.warframestat.us/pc/rivens/search/" + nomArme;
-      return new Promise(resolve => {
-        this.http.get(url).subscribe(data => { let json: Arme[] = data as Arme[]; resolve(json);},
-                                     err => { console.log(err); });
-      });
-    }
     
-    search():Promise<Result> 
+
+
+    getAllMods() : Promise<Mod[]>
     {
-      console.log(`${this.TAG} search`);
-      const url:string = "https://api.warframestat.us/pc/rivens/search/arca";
-      console.log(`${this.TAG} url: ${url}`);
+      const url: string = 'https://api.warframestat.us/mods';
       return new Promise(resolve => {
-        this.http.get(url).subscribe(data => { let json = data as Result; resolve(json);},
+        this.http.get(url).subscribe(data => { let json: Mod[] = data as Mod[]; resolve(json);},
                                      err => { console.log(err); });
       });
     }
 
+    getAllWeapons() : Promise<Weapon[]>
+    {
+      const url: string = 'https://api.warframestat.us/weapons';
+      return new Promise(resolve => {
+        this.http.get(url).subscribe(data => { let json: Weapon[] = data as Weapon[]; resolve(json);},
+                                     err => { console.log(err); });
+      });
+    }
 
 }
